@@ -1,0 +1,147 @@
+
+export const animeData = [
+  {
+    id: "death-note",
+    title: "Death Note",
+    alternativeTitles: ["デスノート", "Записка смерти", "Cuaderno de Muerte"],
+    image: "https://cdn.myanimelist.net/images/anime/9/9453l.jpg",
+    description: "Light Yagami is an ace student with great prospects and he's bored out of his mind. But all that changes when he finds the Death Note, a notebook dropped by a rogue Shinigami death god. Any human whose name is written in the notebook dies, and now Light has vowed to use the power of the Death Note to rid the world of evil. But when criminals begin dropping dead, the authorities send the legendary detective L to track down the killer. With L hot on his heels, will Light lose sight of his noble goal, or his life?",
+    genres: ["Mystery", "Psychological", "Supernatural", "Thriller"],
+    rating: 8.6,
+    year: 2006,
+    episodes: 37,
+    studio: "Madhouse"
+  },
+  {
+    id: "fullmetal-alchemist-brotherhood",
+    title: "Fullmetal Alchemist: Brotherhood",
+    alternativeTitles: ["鋼の錬金術師 FULLMETAL ALCHEMIST", "FMAB", "FMA Brotherhood"],
+    image: "https://cdn.myanimelist.net/images/anime/1223/96541l.jpg",
+    description: "After a horrific alchemy experiment goes wrong in the Elric household, brothers Edward and Alphonse are left in a catastrophic new reality. Ignoring the alchemical principle banning human transmutation, the boys attempted to bring their recently deceased mother back to life. Instead, they suffered brutal personal loss: Alphonse's body disintegrated while Edward lost a leg and then sacrificed an arm to keep Alphonse's soul in the physical realm by binding it to a hulking suit of armor. The brothers are rescued by their neighbor Pinako Rockbell and her granddaughter Winry. Known as a bio-mechanical engineering prodigy, Winry creates prosthetic limbs for Edward by utilizing \"automail,\" a tough, versatile metal used in robots and combat armor. After years of training, the Elric brothers set off on a journey to restore their bodies by finding the Philosopher's Stone—a powerful alchemical object.",
+    genres: ["Action", "Adventure", "Drama", "Fantasy"],
+    rating: 9.1,
+    year: 2009,
+    episodes: 64,
+    studio: "Bones"
+  },
+  {
+    id: "attack-on-titan",
+    title: "Attack on Titan",
+    alternativeTitles: ["進撃の巨人", "Shingeki no Kyojin", "AoT"],
+    image: "https://cdn.myanimelist.net/images/anime/10/47347l.jpg",
+    description: "Centuries ago, mankind was slaughtered to near extinction by monstrous humanoid creatures called Titans, forcing humans to hide in fear behind enormous concentric walls. What makes these giants truly terrifying is that their taste for human flesh is not born out of hunger but what appears to be out of pleasure. To ensure their survival, the remnants of humanity began living within defensive barriers, resulting in one hundred years without a single titan encounter. However, that fragile calm is soon shattered when a colossal Titan manages to breach the supposedly impregnable outer wall, reigniting the fight for survival against the man-eating abominations.",
+    genres: ["Action", "Drama", "Fantasy", "Mystery"],
+    rating: 8.5,
+    year: 2013,
+    episodes: 25,
+    studio: "Wit Studio"
+  },
+  {
+    id: "steins-gate",
+    title: "Steins;Gate",
+    alternativeTitles: ["シュタインズ・ゲート", "STEINS;GATE"],
+    image: "https://cdn.myanimelist.net/images/anime/5/73199l.jpg",
+    description: "The self-proclaimed mad scientist Rintarou Okabe rents out a room in a rickety old building in Akihabara, where he indulges himself in his hobby of inventing prospective 'future gadgets' with fellow lab members: Mayuri Shiina, his air-headed childhood friend, and Hashida Itaru, a perverted hacker nicknamed 'Daru.' The three pass the time by tinkering with their most promising contraption yet, a machine dubbed the 'Phone Microwave,' which performs the strange function of morphing bananas into piles of green gel. Though miraculous in itself, the phenomenon doesn't provide anything concrete in Okabe's search for a scientific breakthrough; that is, until the lab members are spurred into action by a string of mysterious happenings before stumbling upon an unexpected success—the Phone Microwave can send emails to the past, altering the flow of history.",
+    genres: ["Drama", "Psychological", "Sci-Fi", "Thriller"],
+    rating: 9.0,
+    year: 2011,
+    episodes: 24,
+    studio: "White Fox"
+  },
+  {
+    id: "my-hero-academia",
+    title: "My Hero Academia",
+    alternativeTitles: ["僕のヒーローアカデミア", "Boku no Hero Academia", "MHA"],
+    image: "https://cdn.myanimelist.net/images/anime/10/78745l.jpg",
+    description: "The appearance of 'quirks,' newly discovered super powers, has been steadily increasing over the years, with 80 percent of humanity possessing various abilities from manipulation of elements to shapeshifting. This leaves the remainder of the world completely powerless, and Izuku Midoriya is one such individual. Since he was a child, the ambitious middle schooler has wanted nothing more than to be a hero. Izuku's unfair fate leaves him admiring heroes and taking notes on them whenever he can. But it seems that his persistence has borne some fruit: Izuku meets the number one hero and his personal idol, All Might. All Might's quirk is a unique ability that can be inherited, and he has chosen Izuku to be his successor!",
+    genres: ["Action", "Comedy", "Superhero"],
+    rating: 8.2,
+    year: 2016,
+    episodes: 13,
+    studio: "Bones"
+  },
+  {
+    id: "demon-slayer",
+    title: "Demon Slayer",
+    alternativeTitles: ["鬼滅の刃", "Kimetsu no Yaiba"],
+    image: "https://cdn.myanimelist.net/images/anime/1286/99889l.jpg",
+    description: "Ever since the death of his father, the burden of supporting the family has fallen upon Tanjirou Kamado's shoulders. Though living impoverished on a remote mountain, the Kamado family are able to enjoy a relatively peaceful and happy life. One day, Tanjirou decides to go down to the local village to make a little money selling charcoal. On his way back, night falls, forcing Tanjirou to take shelter in the house of a strange man, who warns him of the existence of flesh-eating demons that lurk in the woods at night. When he finally arrives back home the next day, he is met with a horrifying sight—his whole family has been slaughtered. Worse still, the sole survivor is his sister Nezuko, who has been turned into a bloodthirsty demon. Consumed by rage and hatred, Tanjirou swears to avenge his family and stay by his only remaining sibling. Alongside the mysterious group calling themselves the Demon Slayer Corps, Tanjirou will do whatever it takes to slay the demons and protect the remnants of his beloved sister's humanity.",
+    genres: ["Action", "Fantasy", "Historical"],
+    rating: 8.5,
+    year: 2019,
+    episodes: 26,
+    studio: "ufotable"
+  },
+  {
+    id: "your-name",
+    title: "Your Name",
+    alternativeTitles: ["君の名は。", "Kimi no Na wa."],
+    image: "https://cdn.myanimelist.net/images/anime/5/87048l.jpg",
+    description: "Mitsuha Miyamizu, a high school girl, yearns to live the life of a boy in the bustling city of Tokyo—a dream that stands in stark contrast to her present life in the countryside. Meanwhile in the city, Taki Tachibana lives a busy life as a high school student while juggling his part-time job and hopes for a future in architecture. One day, Mitsuha awakens in a room that is not her own and suddenly finds herself living the dream life in Tokyo—but in Taki's body! Elsewhere, Taki finds himself living Mitsuha's life in the humble countryside. In pursuit of an answer to this strange phenomenon, they begin to search for one another. Kimi no Na wa. revolves around Mitsuha and Taki's actions, which begin to have a dramatic impact on each other's lives, weaving them into a fabric held together by fate and circumstance.",
+    genres: ["Drama", "Romance", "Supernatural"],
+    rating: 8.8,
+    year: 2016,
+    episodes: 1,
+    studio: "CoMix Wave Films"
+  },
+  {
+    id: "spirited-away",
+    title: "Spirited Away",
+    alternativeTitles: ["千と千尋の神隠し", "Sen to Chihiro no Kamikakushi"],
+    image: "https://cdn.myanimelist.net/images/anime/6/79597l.jpg",
+    description: "Stubborn, spoiled, and naïve, 10-year-old Chihiro Ogino is less than pleased when she and her parents discover an abandoned amusement park on the way to their new house. Cautiously venturing inside, she realizes that there is more to this place than meets the eye, as strange things begin to happen once dusk falls. Ghostly apparitions and food that turns her parents into pigs are just the start—Chihiro has unwittingly crossed over into the spirit world. Now trapped, she must summon the courage to live and work amongst spirits, with the help of the enigmatic Haku and the cast of unique characters she meets along the way.",
+    genres: ["Adventure", "Fantasy", "Supernatural"],
+    rating: 8.8,
+    year: 2001,
+    episodes: 1,
+    studio: "Studio Ghibli"
+  },
+  {
+    id: "one-punch-man",
+    title: "One-Punch Man",
+    alternativeTitles: ["ワンパンマン", "OPM"],
+    image: "https://cdn.myanimelist.net/images/anime/12/76049l.jpg",
+    description: "The seemingly ordinary and unimpressive Saitama has a rather unique hobby: being a hero. In order to pursue his childhood dream, he trained relentlessly for three years—and lost all of his hair in the process. Now, Saitama is incredibly powerful, so much so that no enemy is able to defeat him in battle. In fact, all it takes to defeat evildoers with just one punch has led to an unexpected problem—he is no longer able to enjoy the thrill of battling and has become quite bored. This all changes with the arrival of Genos, a 19-year-old cyborg, who wishes to be Saitama's disciple after seeing what he is capable of. Genos proposes that the two join the Hero Association in order to become certified heroes that will be recognized for their positive contributions to society, and Saitama, shocked that no one knows who he is, quickly agrees. And thus begins the story of One Punch Man, an action-comedy that follows an eccentric individual who longs to fight strong enemies that can hopefully give him the excitement he once felt and just maybe, he'll become popular in the process.",
+    genres: ["Action", "Comedy", "Sci-Fi", "Superhero"],
+    rating: 8.5,
+    year: 2015,
+    episodes: 12,
+    studio: "Madhouse"
+  },
+  {
+    id: "made-in-abyss",
+    title: "Made in Abyss",
+    alternativeTitles: ["メイドインアビス"],
+    image: "https://cdn.myanimelist.net/images/anime/6/86733l.jpg",
+    description: "The Abyss—a gaping chasm stretching down into the depths of the earth, filled with mysterious creatures and relics from a time long past. How did it come to be? What lies at the bottom? Countless brave individuals, known as Divers, have sought to solve these mysteries of the Abyss, fearlessly descending into its darkest realms. The best and bravest of the Divers, the White Whistles, are hailed as legends by those who remain on the surface. Riko, daughter of the missing White Whistle Lyza the Annihilator, aspires to become like her mother and explore the furthest reaches of the Abyss. However, just a novice Red Whistle herself, she is only permitted to roam its most upper layer. Even so, Riko has a chance encounter with a mysterious robot with the appearance of an ordinary young boy. She comes to name him Reg, and he has no recollection of the events preceding his discovery. Certain that the technology to create Reg must come from deep within the Abyss, the two decide to venture forth into the chasm to recover his memories and see the bottom of the great pit with their own eyes. However, they know not of the harsh reality that is the true existence of the Abyss.",
+    genres: ["Adventure", "Drama", "Fantasy", "Mystery", "Sci-Fi"],
+    rating: 8.7,
+    year: 2017,
+    episodes: 13,
+    studio: "Kinema Citrus"
+  },
+  {
+    id: "violet-evergarden",
+    title: "Violet Evergarden",
+    alternativeTitles: ["ヴァイオレット・エヴァーガーデン"],
+    image: "https://cdn.myanimelist.net/images/anime/1795/95088l.jpg",
+    description: "The Great War finally came to an end after four long years of conflict; fractured in two, the continent of Telesis slowly began to flourish once again. Caught up in the bloodshed was Violet Evergarden, a young girl raised for the sole purpose of decimating enemy lines. Hospitalized and maimed in a bloody skirmish during the War's final leg, she was left with only words from the person she held dearest, but with no understanding of their meaning. Recovering from her wounds, Violet starts a new life working at CH Postal Service after a falling out with her new intended guardian family. There, she witnesses by pure chance the work of an \"Auto Memory Doll,\" amanuenses that transcribe people's thoughts and feelings into words on paper. Moved by the notion, Violet begins work as an Auto Memory Doll, a trade that will take her on an adventure, one that will reshape the lives of her clients and perhaps even her own.",
+    genres: ["Drama", "Fantasy", "Slice of Life"],
+    rating: 8.6,
+    year: 2018,
+    episodes: 13,
+    studio: "Kyoto Animation"
+  },
+  {
+    id: "hunter-x-hunter-2011",
+    title: "Hunter x Hunter (2011)",
+    alternativeTitles: ["HUNTER×HUNTER", "HxH"],
+    image: "https://cdn.myanimelist.net/images/anime/1337/99013l.jpg",
+    description: "Hunter x Hunter is set in a world where Hunters exist to perform all manner of dangerous tasks like capturing criminals and bravely searching for lost treasures in uncharted territories. Twelve-year-old Gon Freecss is determined to become the best Hunter possible in hopes of finding his father, who was a Hunter himself and had long ago abandoned his young son. However, Gon soon realizes the path to achieving his goals is far more challenging than he could have ever imagined. Along the way to becoming an official Hunter, Gon befriends the lively doctor-in-training Leorio, vengeful Kurapika, and rebellious ex-assassin Killua. To attain their own goals and desires, together the four of them take the Hunter Exam, notorious for its low success rate and high probability of death. Throughout their journey, Gon and his friends embark on an adventure that puts them through many hardships and struggles. They will meet a plethora of monsters, creatures, and characters—all while learning what being a Hunter truly means.",
+    genres: ["Action", "Adventure", "Fantasy"],
+    rating: 9.0,
+    year: 2011,
+    episodes: 148,
+    studio: "Madhouse"
+  }
+];
