@@ -6,7 +6,6 @@ import { useLanguage } from "@/context/LanguageContext";
 export function LanguageSwitcher() {
   const { language } = useLanguage();
 
-  // Language is now fixed to Russian, so no toggle functionality
   return (
     <Button
       variant="ghost"
