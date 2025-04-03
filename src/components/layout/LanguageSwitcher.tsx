@@ -6,7 +6,6 @@ import { useLanguage } from "@/context/LanguageContext";
 export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
-  // Переключатель языка
   const toggleLanguage = () => {
     setLanguage(language === "en" ? "ru" : "en");
   };
