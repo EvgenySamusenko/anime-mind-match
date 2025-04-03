@@ -30,8 +30,8 @@ export function AnimeCard({ id, title, image, description, genres, rating, year,
     const userData = localStorage.getItem("user");
     if (!userData) {
       toast({
-        title: "Login Required",
-        description: "Please log in to add anime to your favorites.",
+        title: "Требуется вход",
+        description: "Пожалуйста, войдите, чтобы добавить аниме в избранное.",
         variant: "destructive"
       });
       return;
@@ -41,8 +41,8 @@ export function AnimeCard({ id, title, image, description, genres, rating, year,
     setFavorite(newState);
     
     toast({
-      title: newState ? "Added to Favorites" : "Removed from Favorites",
-      description: newState ? `${title} has been added to your favorites.` : `${title} has been removed from your favorites.`,
+      title: newState ? "Добавлено в избранное" : "Удалено из избранного",
+      description: newState ? `${title} было добавлено в ваше избранное.` : `${title} было удалено из вашего избранного.`,
     });
     
     // In a real app, we would update the user's favorites in the database
@@ -129,7 +129,7 @@ export function AnimeCard({ id, title, image, description, genres, rating, year,
           className="w-full text-anime-purple border-anime-purple/30 hover:bg-anime-purple/10 group-hover:border-anime-purple transition-colors flex items-center gap-2"
         >
           <ExternalLink className="h-4 w-4" />
-          View Details
+          Подробнее
         </Button>
       </CardFooter>
     </Card>

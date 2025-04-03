@@ -104,7 +104,7 @@ export function AnimeGrid() {
         <div className="relative w-full md:max-w-md">
           <Search className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
           <Input
-            placeholder="Search anime by title or description..."
+            placeholder="Поиск аниме по названию или описанию..."
             className="pl-10"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -127,32 +127,32 @@ export function AnimeGrid() {
             <SelectTrigger className="w-[180px]">
               <div className="flex items-center gap-2">
                 <SlidersHorizontal className="h-4 w-4" />
-                <span>Sort</span>
+                <span>Сортировка</span>
               </div>
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="rating-desc">
                 <div className="flex items-center gap-2">
                   <Star className="h-4 w-4" />
-                  <span>Highest Rated</span>
+                  <span>Наивысший рейтинг</span>
                 </div>
               </SelectItem>
               <SelectItem value="year-desc">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
-                  <span>Newest First</span>
+                  <span>Сначала новые</span>
                 </div>
               </SelectItem>
               <SelectItem value="title-asc">
                 <div className="flex items-center gap-2">
                   <ArrowDownAZ className="h-4 w-4" />
-                  <span>Title (A-Z)</span>
+                  <span>Название (А-Я)</span>
                 </div>
               </SelectItem>
               <SelectItem value="title-desc">
                 <div className="flex items-center gap-2">
                   <ArrowUpAZ className="h-4 w-4" />
-                  <span>Title (Z-A)</span>
+                  <span>Название (Я-А)</span>
                 </div>
               </SelectItem>
             </SelectContent>
@@ -162,7 +162,7 @@ export function AnimeGrid() {
             <SheetTrigger asChild>
               <Button variant="outline" className="gap-2">
                 <Filter className="h-4 w-4" />
-                Filter
+                Фильтр
                 {selectedGenres.length > 0 && (
                   <Badge 
                     variant="secondary" 
@@ -175,14 +175,14 @@ export function AnimeGrid() {
             </SheetTrigger>
             <SheetContent className="overflow-y-auto">
               <SheetHeader>
-                <SheetTitle>Filter Anime</SheetTitle>
+                <SheetTitle>Фильтр аниме</SheetTitle>
                 <SheetDescription>
-                  Select genres to filter the anime list.
+                  Выберите жанры для фильтрации списка аниме.
                 </SheetDescription>
               </SheetHeader>
               
               <div className="py-6">
-                <h3 className="text-sm font-medium mb-4">Genres</h3>
+                <h3 className="text-sm font-medium mb-4">Жанры</h3>
                 <div className="space-y-3">
                   {allGenres.map(genre => (
                     <div key={genre} className="flex items-center space-x-2">
@@ -204,11 +204,11 @@ export function AnimeGrid() {
                   variant="outline" 
                   onClick={clearFilters}
                 >
-                  Clear All
+                  Очистить всё
                 </Button>
                 <SheetClose asChild>
                   <Button className="bg-anime-purple hover:bg-anime-indigo">
-                    Apply Filters
+                    Применить фильтры
                   </Button>
                 </SheetClose>
               </SheetFooter>
@@ -219,7 +219,7 @@ export function AnimeGrid() {
       
       {selectedGenres.length > 0 && (
         <div className="flex flex-wrap gap-2 items-center">
-          <span className="text-sm font-medium">Active filters:</span>
+          <span className="text-sm font-medium">Активные фильтры:</span>
           {selectedGenres.map(genre => (
             <Badge 
               key={genre} 
@@ -241,7 +241,7 @@ export function AnimeGrid() {
             onClick={clearFilters}
             className="text-xs text-muted-foreground"
           >
-            Clear all
+            Очистить всё
           </Button>
         </div>
       )}
@@ -263,12 +263,12 @@ export function AnimeGrid() {
         </div>
       ) : (
         <div className="text-center py-16">
-          <h3 className="text-lg font-medium mb-2">No anime found</h3>
+          <h3 className="text-lg font-medium mb-2">Аниме не найдено</h3>
           <p className="text-muted-foreground mb-4">
-            Try adjusting your search or filters to find what you're looking for.
+            Попробуйте изменить параметры поиска или фильтры, чтобы найти то, что вы ищете.
           </p>
           <Button onClick={clearFilters}>
-            Clear Filters
+            Очистить фильтры
           </Button>
         </div>
       )}

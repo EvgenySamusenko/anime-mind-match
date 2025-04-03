@@ -24,8 +24,8 @@ export function LoginForm() {
     setTimeout(() => {
       localStorage.setItem("user", JSON.stringify({ email }));
       toast({
-        title: "Login successful!",
-        description: "Welcome back to AnimeMind Match!",
+        title: "Вход выполнен успешно!",
+        description: "Добро пожаловать в AnimeMind Match!",
       });
       setIsLoading(false);
       navigate("/dashboard");
@@ -35,15 +35,15 @@ export function LoginForm() {
   return (
     <Card className="w-full max-w-md mx-auto animate-fade-in shadow-lg">
       <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl font-bold text-center">Welcome back</CardTitle>
+        <CardTitle className="text-2xl font-bold text-center">Добро пожаловать</CardTitle>
         <CardDescription className="text-center">
-          Enter your credentials to access your account
+          Введите учетные данные для доступа к вашему аккаунту
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">Электронная почта</Label>
             <div className="relative">
               <Mail className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
               <Input
@@ -59,13 +59,13 @@ export function LoginForm() {
           </div>
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">Пароль</Label>
               <button
                 type="button"
                 onClick={() => navigate("/forgot-password")}
                 className="text-sm font-medium text-anime-purple underline-offset-4 hover:underline"
               >
-                Forgot password?
+                Забыли пароль?
               </button>
             </div>
             <div className="relative">
@@ -92,18 +92,18 @@ export function LoginForm() {
             className="w-full bg-anime-purple hover:bg-anime-indigo transition-colors" 
             disabled={isLoading}
           >
-            {isLoading ? "Signing in..." : "Sign in"}
+            {isLoading ? "Выполняется вход..." : "Войти"}
           </Button>
         </form>
       </CardContent>
       <CardFooter className="flex flex-col space-y-4">
         <div className="text-center text-sm text-muted-foreground">
-          Don&apos;t have an account?{" "}
+          Нет учетной записи?{" "}
           <button
             onClick={() => navigate("/register")}
             className="font-medium text-anime-purple underline-offset-4 hover:underline"
           >
-            Sign up
+            Зарегистрироваться
           </button>
         </div>
       </CardFooter>

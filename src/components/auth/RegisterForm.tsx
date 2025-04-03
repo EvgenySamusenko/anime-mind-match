@@ -23,8 +23,8 @@ export function RegisterForm() {
     
     if (password !== confirmPassword) {
       toast({
-        title: "Passwords don't match",
-        description: "Please ensure both passwords are the same.",
+        title: "Пароли не совпадают",
+        description: "Пожалуйста, убедитесь, что оба пароля одинаковы.",
         variant: "destructive"
       });
       return;
@@ -36,8 +36,8 @@ export function RegisterForm() {
     setTimeout(() => {
       localStorage.setItem("user", JSON.stringify({ name, email }));
       toast({
-        title: "Registration successful!",
-        description: "Welcome to AnimeMind Match!",
+        title: "Регистрация успешна!",
+        description: "Добро пожаловать в AnimeMind Match!",
       });
       setIsLoading(false);
       navigate("/profile/create");
@@ -47,20 +47,20 @@ export function RegisterForm() {
   return (
     <Card className="w-full max-w-md mx-auto animate-fade-in shadow-lg">
       <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl font-bold text-center">Create an account</CardTitle>
+        <CardTitle className="text-2xl font-bold text-center">Создание учетной записи</CardTitle>
         <CardDescription className="text-center">
-          Enter your information to get started
+          Введите вашу информацию, чтобы начать
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Full Name</Label>
+            <Label htmlFor="name">Полное имя</Label>
             <div className="relative">
               <User className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
               <Input
                 id="name"
-                placeholder="John Doe"
+                placeholder="Иван Иванов"
                 type="text"
                 className="pl-10"
                 value={name}
@@ -71,7 +71,7 @@ export function RegisterForm() {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">Электронная почта</Label>
             <div className="relative">
               <Mail className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
               <Input
@@ -87,7 +87,7 @@ export function RegisterForm() {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password">Пароль</Label>
             <div className="relative">
               <Lock className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
               <Input
@@ -109,7 +109,7 @@ export function RegisterForm() {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="confirmPassword">Confirm Password</Label>
+            <Label htmlFor="confirmPassword">Подтверждение пароля</Label>
             <div className="relative">
               <Lock className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
               <Input
@@ -128,18 +128,18 @@ export function RegisterForm() {
             className="w-full bg-anime-purple hover:bg-anime-indigo transition-colors" 
             disabled={isLoading}
           >
-            {isLoading ? "Creating account..." : "Create account"}
+            {isLoading ? "Создание аккаунта..." : "Создать аккаунт"}
           </Button>
         </form>
       </CardContent>
       <CardFooter className="flex flex-col space-y-4">
         <div className="text-center text-sm text-muted-foreground">
-          Already have an account?{" "}
+          Уже есть учетная запись?{" "}
           <button
             onClick={() => navigate("/login")}
             className="font-medium text-anime-purple underline-offset-4 hover:underline"
           >
-            Sign in
+            Войти
           </button>
         </div>
       </CardFooter>

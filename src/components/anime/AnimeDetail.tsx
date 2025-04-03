@@ -66,8 +66,8 @@ export function AnimeDetail() {
     const userData = localStorage.getItem("user");
     if (!userData) {
       toast({
-        title: "Login Required",
-        description: "Please log in to add anime to your favorites.",
+        title: "Требуется вход",
+        description: "Пожалуйста, войдите, чтобы добавить аниме в избранное.",
         variant: "destructive"
       });
       return;
@@ -77,8 +77,8 @@ export function AnimeDetail() {
     setFavorite(newState);
     
     toast({
-      title: newState ? "Added to Favorites" : "Removed from Favorites",
-      description: newState ? `${anime.title} has been added to your favorites.` : `${anime.title} has been removed from your favorites.`,
+      title: newState ? "Добавлено в избранное" : "Удалено из избранного",
+      description: newState ? `${anime.title} было добавлено в ваше избранное.` : `${anime.title} было удалено из вашего избранного.`,
     });
     
     // Update user's favorites in localStorage (would be database in production)
@@ -102,8 +102,8 @@ export function AnimeDetail() {
     const userData = localStorage.getItem("user");
     if (!userData) {
       toast({
-        title: "Login Required",
-        description: "Please log in to rate anime.",
+        title: "Требуется вход",
+        description: "Пожалуйста, войдите, чтобы оценить аниме.",
         variant: "destructive"
       });
       return;
@@ -112,8 +112,8 @@ export function AnimeDetail() {
     setUserRating(rating);
     
     toast({
-      title: "Rating Submitted",
-      description: `You've rated ${anime.title} ${rating} stars.`,
+      title: "Оценка отправлена",
+      description: `Вы оценили ${anime.title} на ${rating} звезд.`,
     });
     
     // Update user's ratings in localStorage (would be database in production)
@@ -140,13 +140,13 @@ export function AnimeDetail() {
     return (
       <div className="max-w-md mx-auto text-center py-12">
         <Film className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-        <h2 className="text-2xl font-bold mb-4">Anime Not Found</h2>
-        <p className="text-muted-foreground mb-6">The anime you're looking for doesn't exist.</p>
+        <h2 className="text-2xl font-bold mb-4">Аниме не найдено</h2>
+        <p className="text-muted-foreground mb-6">Аниме, которое вы ищете, не существует.</p>
         <Button 
           onClick={() => navigate("/anime")}
           className="bg-anime-purple hover:bg-anime-indigo"
         >
-          Browse Anime
+          Просмотреть аниме
         </Button>
       </div>
     );
@@ -160,7 +160,7 @@ export function AnimeDetail() {
         className="mb-4 flex items-center gap-2"
       >
         <ArrowLeft className="h-4 w-4" />
-        Back
+        Назад
       </Button>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -206,20 +206,20 @@ export function AnimeDetail() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Calendar className="h-4 w-4" />
-                  <span>Released: {anime.year}</span>
+                  <span>Выпущено: {anime.year}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Clock className="h-4 w-4" />
-                  <span>Episodes: {anime.episodes}</span>
+                  <span>Эпизоды: {anime.episodes}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Film className="h-4 w-4" />
-                  <span>Studio: {anime.studio}</span>
+                  <span>Студия: {anime.studio}</span>
                 </div>
               </div>
               
               <div className="pt-2">
-                <h3 className="text-sm font-medium mb-3">Rate this anime:</h3>
+                <h3 className="text-sm font-medium mb-3">Оцените это аниме:</h3>
                 <div className="flex gap-1">
                   {[1, 2, 3, 4, 5].map((rating) => (
                     <Button
@@ -242,7 +242,7 @@ export function AnimeDetail() {
               >
                 <a href="#" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4" />
-                  Official Website
+                  Официальный сайт
                 </a>
               </Button>
               
@@ -250,7 +250,7 @@ export function AnimeDetail() {
                 className="w-full bg-anime-purple hover:bg-anime-indigo flex items-center gap-2"
               >
                 <PlayCircle className="h-4 w-4" />
-                Watch Trailer
+                Смотреть трейлер
               </Button>
             </CardContent>
           </Card>
@@ -261,15 +261,15 @@ export function AnimeDetail() {
             <h1 className="text-3xl font-bold mb-2">{anime.title}</h1>
             {anime.alternativeTitles && (
               <p className="text-muted-foreground mb-4">
-                Also known as: {anime.alternativeTitles.join(", ")}
+                Также известно как: {anime.alternativeTitles.join(", ")}
               </p>
             )}
             
             <Tabs defaultValue="overview" className="w-full">
               <TabsList className="grid grid-cols-3 mb-6">
-                <TabsTrigger value="overview">Overview</TabsTrigger>
-                <TabsTrigger value="characters">Characters</TabsTrigger>
-                <TabsTrigger value="related">Related</TabsTrigger>
+                <TabsTrigger value="overview">Обзор</TabsTrigger>
+                <TabsTrigger value="characters">Персонажи</TabsTrigger>
+                <TabsTrigger value="related">Связанные</TabsTrigger>
               </TabsList>
               
               <TabsContent value="overview">
@@ -277,22 +277,22 @@ export function AnimeDetail() {
                   <CardContent className="pt-6">
                     <div className="space-y-6">
                       <div>
-                        <h2 className="text-xl font-semibold mb-2">Synopsis</h2>
+                        <h2 className="text-xl font-semibold mb-2">Синопсис</h2>
                         <p className="text-muted-foreground whitespace-pre-line">
                           {anime.description}
                         </p>
                       </div>
                       
                       <div>
-                        <h2 className="text-xl font-semibold mb-2">Personality Match</h2>
+                        <h2 className="text-xl font-semibold mb-2">Соответствие вашему профилю</h2>
                         <p className="text-muted-foreground mb-4">
-                          Based on your personality profile, here's how this anime matches your preferences:
+                          Основываясь на вашем психологическом профиле, вот как это аниме соответствует вашим предпочтениям:
                         </p>
                         
                         <div className="space-y-3">
                           <div>
                             <div className="flex justify-between mb-1">
-                              <span className="text-sm font-medium">Overall Match</span>
+                              <span className="text-sm font-medium">Общее соответствие</span>
                               <span className="text-sm text-muted-foreground">85%</span>
                             </div>
                             <Progress value={85} className="h-2" />
@@ -300,7 +300,7 @@ export function AnimeDetail() {
                           
                           <div>
                             <div className="flex justify-between mb-1">
-                              <span className="text-sm font-medium">Story Complexity</span>
+                              <span className="text-sm font-medium">Сложность сюжета</span>
                               <span className="text-sm text-muted-foreground">92%</span>
                             </div>
                             <Progress value={92} className="h-2" />
@@ -308,7 +308,7 @@ export function AnimeDetail() {
                           
                           <div>
                             <div className="flex justify-between mb-1">
-                              <span className="text-sm font-medium">Character Depth</span>
+                              <span className="text-sm font-medium">Глубина персонажей</span>
                               <span className="text-sm text-muted-foreground">78%</span>
                             </div>
                             <Progress value={78} className="h-2" />
@@ -316,7 +316,7 @@ export function AnimeDetail() {
                           
                           <div>
                             <div className="flex justify-between mb-1">
-                              <span className="text-sm font-medium">Emotional Resonance</span>
+                              <span className="text-sm font-medium">Эмоциональный резонанс</span>
                               <span className="text-sm text-muted-foreground">88%</span>
                             </div>
                             <Progress value={88} className="h-2" />
@@ -325,25 +325,25 @@ export function AnimeDetail() {
                       </div>
                       
                       <div>
-                        <h2 className="text-xl font-semibold mb-2">Why You'll Like This</h2>
+                        <h2 className="text-xl font-semibold mb-2">Почему вам это понравится</h2>
                         <ul className="space-y-2">
                           <li className="flex items-start gap-2">
                             <div className="h-5 w-5 rounded-full bg-anime-purple/10 text-anime-purple flex items-center justify-center mt-0.5">
                               <BookOpen className="h-3 w-3" />
                             </div>
-                            <span>Complex, philosophical themes align with your analytical thinking</span>
+                            <span>Сложные философские темы соответствуют вашему аналитическому мышлению</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <div className="h-5 w-5 rounded-full bg-anime-purple/10 text-anime-purple flex items-center justify-center mt-0.5">
                               <BookOpen className="h-3 w-3" />
                             </div>
-                            <span>Character development matches your preference for realistic personas</span>
+                            <span>Развитие персонажей соответствует вашему предпочтению реалистичных личностей</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <div className="h-5 w-5 rounded-full bg-anime-purple/10 text-anime-purple flex items-center justify-center mt-0.5">
                               <BookOpen className="h-3 w-3" />
                             </div>
-                            <span>Visual storytelling style suits your immersive viewing habits</span>
+                            <span>Стиль визуального повествования соответствует вашим привычкам погружения</span>
                           </li>
                         </ul>
                       </div>
@@ -359,7 +359,7 @@ export function AnimeDetail() {
                       {/* This would contain character cards */}
                       <div className="text-center py-12">
                         <p className="text-muted-foreground">
-                          Character information coming soon.
+                          Информация о персонажах скоро появится.
                         </p>
                       </div>
                     </div>
@@ -374,7 +374,7 @@ export function AnimeDetail() {
                       {/* This would contain related anime */}
                       <div className="text-center py-12">
                         <p className="text-muted-foreground">
-                          Related anime information coming soon.
+                          Информация о связанных аниме скоро появится.
                         </p>
                       </div>
                     </div>

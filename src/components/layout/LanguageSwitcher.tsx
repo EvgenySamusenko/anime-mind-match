@@ -4,20 +4,16 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function LanguageSwitcher() {
-  const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
 
-  const toggleLanguage = () => {
-    setLanguage(language === "en" ? "ru" : "en");
-  };
-
+  // Language is now fixed to Russian, so no toggle functionality
   return (
     <Button
       variant="ghost"
       size="sm"
-      onClick={toggleLanguage}
-      className="text-foreground hover:text-anime-purple"
+      className="text-foreground hover:text-anime-purple cursor-default"
     >
-      {language === "en" ? "RU" : "EN"}
+      РУС
     </Button>
   );
 }

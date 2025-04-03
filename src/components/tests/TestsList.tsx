@@ -17,14 +17,8 @@ import { useLanguage } from "@/context/LanguageContext";
 const tests = [
   {
     id: "personality-type",
-    title: {
-      en: "Personality Type Indicator",
-      ru: "Индикатор типа личности"
-    },
-    description: {
-      en: "Discover your psychological type based on 16 distinct personalities.",
-      ru: "Откройте свой психологический тип на основе 16 различных личностей."
-    },
+    title: "Индикатор типа личности",
+    description: "Откройте свой психологический тип на основе 16 различных личностей.",
     duration: "10-15",
     questions: 30,
     category: "Personality",
@@ -33,14 +27,8 @@ const tests = [
   },
   {
     id: "emotional-preference",
-    title: {
-      en: "Emotional Anime Preference",
-      ru: "Эмоциональные предпочтения аниме"
-    },
-    description: {
-      en: "Find how your emotional responses connect to different anime genres.",
-      ru: "Узнайте, как ваши эмоциональные реакции связаны с разными жанрами аниме."
-    },
+    title: "Эмоциональные предпочтения аниме",
+    description: "Узнайте, как ваши эмоциональные реакции связаны с разными жанрами аниме.",
     duration: "5-8",
     questions: 15,
     category: "Preferences",
@@ -49,14 +37,8 @@ const tests = [
   },
   {
     id: "character-affinity",
-    title: {
-      en: "Character Affinity Test",
-      ru: "Тест на сходство с персонажами"
-    },
-    description: {
-      en: "Discover which types of anime characters you relate to the most.",
-      ru: "Узнайте, с какими типами аниме-персонажей у вас больше всего сходства."
-    },
+    title: "Тест на сходство с персонажами",
+    description: "Узнайте, с какими типами аниме-персонажей у вас больше всего сходства.",
     duration: "8-10",
     questions: 20,
     category: "Affinity",
@@ -65,14 +47,8 @@ const tests = [
   },
   {
     id: "mood-matcher",
-    title: {
-      en: "Current Mood Matcher",
-      ru: "Подбор аниме по настроению"
-    },
-    description: {
-      en: "Get anime recommendations based on your current emotional state.",
-      ru: "Получите рекомендации аниме на основе вашего текущего эмоционального состояния."
-    },
+    title: "Подбор аниме по настроению",
+    description: "Получите рекомендации аниме на основе вашего текущего эмоционального состояния.",
     duration: "3-5",
     questions: 10,
     category: "Mood",
@@ -81,14 +57,8 @@ const tests = [
   },
   {
     id: "cognitive-style",
-    title: {
-      en: "Cognitive Style Analysis",
-      ru: "Анализ когнитивного стиля"
-    },
-    description: {
-      en: "Understand how your thinking patterns relate to anime storytelling.",
-      ru: "Поймите, как ваши мыслительные паттерны связаны с повествованием в аниме."
-    },
+    title: "Анализ когнитивного стиля",
+    description: "Поймите, как ваши мыслительные паттерны связаны с повествованием в аниме.",
     duration: "12-15",
     questions: 25,
     category: "Cognitive",
@@ -97,10 +67,18 @@ const tests = [
   }
 ];
 
+const categoryNames = {
+  "Personality": "Личность",
+  "Preferences": "Предпочтения",
+  "Affinity": "Сходство",
+  "Mood": "Настроение",
+  "Cognitive": "Когнитивный"
+};
+
 export function TestsList() {
   const [filter, setFilter] = useState<string | null>(null);
   const navigate = useNavigate();
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   const filteredTests = filter 
     ? tests.filter(test => test.category.toLowerCase() === filter.toLowerCase())
@@ -111,9 +89,9 @@ export function TestsList() {
   return (
     <div className="container mx-auto animate-fade-in">
       <div className="space-y-4 mb-8">
-        <h1 className="text-3xl font-bold text-center">{t("tests", "title")}</h1>
+        <h1 className="text-3xl font-bold text-center">Психологические тесты</h1>
         <p className="text-muted-foreground text-center max-w-2xl mx-auto">
-          {t("tests", "description")}
+          Узнайте свои личностные черты и получите персонализированные рекомендации аниме на основе вашего психологического профиля.
         </p>
         
         <div className="flex flex-wrap justify-center gap-2 mt-6">
@@ -122,7 +100,7 @@ export function TestsList() {
             className={filter === null ? "bg-anime-purple hover:bg-anime-indigo" : ""}
             onClick={() => setFilter(null)}
           >
-            {t("tests", "allTests")}
+            Все тесты
           </Button>
           {categories.map(category => (
             <Button
@@ -131,7 +109,7 @@ export function TestsList() {
               className={filter === category.toLowerCase() ? "bg-anime-purple hover:bg-anime-indigo" : ""}
               onClick={() => setFilter(category.toLowerCase())}
             >
-              {t("categories", category)}
+              {categoryNames[category]}
             </Button>
           ))}
         </div>
@@ -150,22 +128,22 @@ export function TestsList() {
                   </div>
                   {test.popular && (
                     <Badge variant="secondary" className="bg-anime-pink/10 text-anime-pink border-none">
-                      {t("tests", "popular")}
+                      Популярный
                     </Badge>
                   )}
                 </div>
-                <CardTitle className="mt-2">{test.title[language]}</CardTitle>
-                <CardDescription>{test.description[language]}</CardDescription>
+                <CardTitle className="mt-2">{test.title}</CardTitle>
+                <CardDescription>{test.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
                 <div className="flex flex-col space-y-2">
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Clock className="mr-2 h-4 w-4" />
-                    <span>{test.duration} {t("tests", "duration")}</span>
+                    <span>{test.duration} минут</span>
                   </div>
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Brain className="mr-2 h-4 w-4" />
-                    <span>{test.questions} {t("tests", "questions")}</span>
+                    <span>{test.questions} вопросов</span>
                   </div>
                 </div>
               </CardContent>
@@ -174,7 +152,7 @@ export function TestsList() {
                   onClick={() => navigate(`/tests/${test.id}`)}
                   className="w-full bg-anime-purple hover:bg-anime-indigo group-hover:translate-y-[-2px] transition-all"
                 >
-                  {t("tests", "startTest")}
+                  Начать тест
                 </Button>
               </CardFooter>
             </Card>

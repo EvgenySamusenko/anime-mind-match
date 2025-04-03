@@ -22,8 +22,8 @@ export function ForgotPasswordForm() {
     // Simulate password reset - this would be replaced with actual auth
     setTimeout(() => {
       toast({
-        title: "Reset link sent!",
-        description: "Please check your email for password reset instructions.",
+        title: "Ссылка отправлена!",
+        description: "Пожалуйста, проверьте вашу электронную почту для получения инструкций по сбросу пароля.",
       });
       setIsLoading(false);
       setIsSubmitted(true);
@@ -33,18 +33,18 @@ export function ForgotPasswordForm() {
   return (
     <Card className="w-full max-w-md mx-auto animate-fade-in shadow-lg">
       <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl font-bold text-center">Reset your password</CardTitle>
+        <CardTitle className="text-2xl font-bold text-center">Сброс пароля</CardTitle>
         <CardDescription className="text-center">
           {!isSubmitted 
-            ? "Enter your email address and we'll send you a link to reset your password" 
-            : "We've sent you an email with instructions to reset your password"}
+            ? "Введите вашу электронную почту, и мы отправим ссылку для сброса пароля" 
+            : "Мы отправили вам письмо с инструкциями по сбросу пароля"}
         </CardDescription>
       </CardHeader>
       <CardContent>
         {!isSubmitted ? (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">Электронная почта</Label>
               <div className="relative">
                 <Mail className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
                 <Input
@@ -63,21 +63,21 @@ export function ForgotPasswordForm() {
               className="w-full bg-anime-purple hover:bg-anime-indigo transition-colors" 
               disabled={isLoading}
             >
-              {isLoading ? "Sending..." : "Send reset link"}
+              {isLoading ? "Отправка..." : "Отправить ссылку"}
             </Button>
           </form>
         ) : (
           <div className="space-y-4 text-center">
             <p className="text-muted-foreground">
-              If an account exists with the email address <span className="font-semibold text-foreground">{email}</span>,
-              you'll receive a password reset link shortly.
+              Если аккаунт с адресом <span className="font-semibold text-foreground">{email}</span> существует,
+              вы вскоре получите ссылку для сброса пароля.
             </p>
             <Button 
               onClick={() => setIsSubmitted(false)}
               variant="outline"
               className="mx-auto"
             >
-              Try different email
+              Использовать другой адрес
             </Button>
           </div>
         )}
@@ -89,7 +89,7 @@ export function ForgotPasswordForm() {
           className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to login
+          Вернуться ко входу
         </Button>
       </CardFooter>
     </Card>

@@ -23,7 +23,6 @@ import {
   Film
 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import { useLanguage } from "@/context/LanguageContext";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 
 export function Header() {
@@ -32,7 +31,6 @@ export function Header() {
   const navigate = useNavigate();
   const location = useLocation();
   const { toast } = useToast();
-  const { t } = useLanguage();
 
   useEffect(() => {
     const user = localStorage.getItem("user");
@@ -43,8 +41,8 @@ export function Header() {
     localStorage.removeItem("user");
     setIsLoggedIn(false);
     toast({
-      title: "Logged out successfully",
-      description: "You have been logged out of your account",
+      title: "Выход выполнен успешно",
+      description: "Вы вышли из своей учетной записи",
     });
     navigate("/");
   };
@@ -53,15 +51,15 @@ export function Header() {
     <>
       <Link to="/" className="text-foreground hover:text-anime-purple transition-colors flex items-center gap-1">
         <Home className="h-4 w-4" />
-        <span>{t("common", "home")}</span>
+        <span>Главная</span>
       </Link>
       <Link to="/anime" className="text-foreground hover:text-anime-purple transition-colors flex items-center gap-1">
         <Film className="h-4 w-4" />
-        <span>{t("common", "anime")}</span>
+        <span>Аниме</span>
       </Link>
       <Link to="/tests" className="text-foreground hover:text-anime-purple transition-colors flex items-center gap-1">
         <Brain className="h-4 w-4" />
-        <span>{t("common", "personalityTests")}</span>
+        <span>Психологические тесты</span>
       </Link>
     </>
   );
@@ -84,10 +82,10 @@ export function Header() {
           {!isLoggedIn ? (
             <>
               <Button variant="ghost" onClick={() => navigate("/login")} className="text-foreground hover:text-anime-purple">
-                {t("common", "signIn")}
+                Войти
               </Button>
               <Button onClick={() => navigate("/register")} className="bg-anime-purple hover:bg-anime-indigo">
-                {t("common", "signUp")}
+                Регистрация
               </Button>
             </>
           ) : (
@@ -103,24 +101,24 @@ export function Header() {
               <DropdownMenuContent align="end" className="w-56">
                 <DropdownMenuItem onClick={() => navigate("/profile")}>
                   <User className="mr-2 h-4 w-4" />
-                  <span>{t("common", "profile")}</span>
+                  <span>Профиль</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => navigate("/favorites")}>
                   <Heart className="mr-2 h-4 w-4" />
-                  <span>{t("common", "favorites")}</span>
+                  <span>Избранное</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => navigate("/dashboard")}>
                   <BookOpen className="mr-2 h-4 w-4" />
-                  <span>{t("common", "dashboard")}</span>
+                  <span>Панель управления</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => navigate("/settings")}>
                   <Settings className="mr-2 h-4 w-4" />
-                  <span>{t("common", "settings")}</span>
+                  <span>Настройки</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={handleLogout}>
                   <LogOut className="mr-2 h-4 w-4" />
-                  <span>{t("common", "logOut")}</span>
+                  <span>Выйти</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -144,41 +142,40 @@ export function Header() {
           <div className="md:hidden fixed inset-0 top-16 z-50 bg-background border-t p-4 animate-fade-in">
             <nav className="flex flex-col space-y-4 py-4">
               <NavItems />
-              <LanguageSwitcher />
               {isLoggedIn ? (
                 <>
                   <Link to="/profile" className="text-foreground hover:text-anime-purple transition-colors flex items-center gap-1">
                     <User className="h-4 w-4" />
-                    <span>{t("common", "profile")}</span>
+                    <span>Профиль</span>
                   </Link>
                   <Link to="/favorites" className="text-foreground hover:text-anime-purple transition-colors flex items-center gap-1">
                     <Heart className="h-4 w-4" />
-                    <span>{t("common", "favorites")}</span>
+                    <span>Избранное</span>
                   </Link>
                   <Link to="/dashboard" className="text-foreground hover:text-anime-purple transition-colors flex items-center gap-1">
                     <BookOpen className="h-4 w-4" />
-                    <span>{t("common", "dashboard")}</span>
+                    <span>Панель управления</span>
                   </Link>
                   <Link to="/settings" className="text-foreground hover:text-anime-purple transition-colors flex items-center gap-1">
                     <Settings className="h-4 w-4" />
-                    <span>{t("common", "settings")}</span>
+                    <span>Настройки</span>
                   </Link>
                   <button 
                     onClick={handleLogout}
                     className="text-foreground hover:text-anime-purple transition-colors flex items-center gap-1"
                   >
                     <LogOut className="h-4 w-4" />
-                    <span>{t("common", "logOut")}</span>
+                    <span>Выйти</span>
                   </button>
                 </>
               ) : (
                 <>
                   <Link to="/login" className="text-foreground hover:text-anime-purple transition-colors flex items-center gap-1">
                     <LogIn className="h-4 w-4" />
-                    <span>{t("common", "signIn")}</span>
+                    <span>Войти</span>
                   </Link>
                   <Button onClick={() => navigate("/register")} className="w-full bg-anime-purple hover:bg-anime-indigo">
-                    {t("common", "signUp")}
+                    Регистрация
                   </Button>
                 </>
               )}
